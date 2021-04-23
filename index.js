@@ -1,6 +1,6 @@
 import styles from './style.css';
 
-window.popularMovies = {
+const popularMovies = {
   results: [
     {
       adult: false,
@@ -223,8 +223,8 @@ function SearchByMovie() {
 }
 
 function MoviesGrid() {
-  let title = 'Popular Movies';
   const { searchValue } = window.currentState;
+  let title;
   let movies;
   if (searchValue) {
     const filteredMovies = popularMovies.results.filter(movie => {
@@ -248,8 +248,14 @@ function getMoviesCards(moviesArray) {
   let moviesItems = '';
   moviesArray.forEach(({ original_title, poster_path }) => {
     const moviesItem = `
-      <a class="${styles['movies-item']}" href="#" title="${original_title}">
-        <img src="http://image.tmdb.org/t/p/w500/${poster_path}" alt="${original_title}">
+      <a
+        class="${styles['movies-item']}"
+        href="#"
+        title="${original_title}">
+          <img
+            src="http://image.tmdb.org/t/p/w500/${poster_path}"
+            alt="${original_title}"
+          >
       </a>
     `;
     moviesItems += moviesItem;
