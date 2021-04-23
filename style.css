@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+h2 {
+  margin-bottom: 35px;
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.17em;
+  text-shadow: 2px 2px 4px #333333;
+}
+
+h3 {
+  font-size: 42px;
+}
+p {
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.17em;
+  text-shadow: 2px 2px 3px #333333;
+}
+
+a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.popular-movie {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+  padding-top: 55%;
+  overflow: hidden;
+}
+
+.popular-movie-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.popular-movie-description {
+  position: absolute;
+  bottom: 40px;
+  left: 5%;
+  max-width: 920px;
+  width: 90%;
+}
+
+.search-input {
+  display: block;
+  width: 90%;
+  height: 50px;
+  margin: 0 auto 50px;
+  padding-left: 50px;
+  border-radius: 5px;
+  font-size: 22px;
+  box-shadow: inset 5px 5px 7px #cecece;
+  background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1000 1000' enable-background='new 0 0 1000 1000' xml:space='preserve'%3E%3Cmetadata%3E Svg Vector Icons : http://www.onlinewebfonts.com/icon %3C/metadata%3E%3Cg%3E%3Cpath d='M960.9,820.2c18,18,29.1,42.9,29.1,70.3c0,54.9-44.5,99.5-99.4,99.5c-27.5,0-52.3-11.1-70.3-29.1l0,0L609.6,750.2c-59.2,35-128,55.4-201.8,55.4C188.1,805.6,10,627.5,10,407.8C10,188.1,188.1,10,407.8,10c219.7,0,397.8,178.1,397.8,397.8c0,73.7-20.4,142.6-55.4,201.8L960.9,820.2L960.9,820.2z M407.8,109.4C243,109.4,109.4,243,109.4,407.8c0,164.8,133.6,298.3,298.3,298.3s298.3-133.6,298.3-298.3C706.1,243,572.6,109.4,407.8,109.4z'/%3E%3C/g%3E%3C/svg%3E")
+    10px no-repeat;
+  background-size: 30px;
+}
+
+.movies-list-wrap {
+  width: 90%;
+  margin: 0 auto 100px;
+}
+
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 2%;
+  row-gap: 4%;
+  width: 100%;
+}
+
+.movies-item {
+  position: relative;
+  padding-top: 148%;
+  overflow: hidden;
+}
+
+.movies-item img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.movies-item:hover {
+  box-shadow: 5px 5px 7px #a8a8a8;
+  transform: translate(-5px, -5px);
+  transition: all 0.3s ease;
+}
