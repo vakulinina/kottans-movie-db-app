@@ -199,13 +199,13 @@ function renderApp() {
 renderApp();
 
 function PopularMovie() {
-  const movie = popularMovies.results[0];
+  const { backdrop_path, original_title, overview } = popularMovies.results[0];
   return `
     <article class="${styles['popular-movie']}">
-      <img class="${styles['popular-movie-img']}" src="http://image.tmdb.org/t/p/w1280/${movie.backdrop_path}">
+      <img class="${styles['popular-movie-img']}" src="http://image.tmdb.org/t/p/w1280/${backdrop_path}">
       <div class="${styles['popular-movie-description']}">
-        <h2>${movie.original_title}</h2>
-        <p>${movie.overview}</p>
+        <h2>${original_title}</h2>
+        <p>${overview}</p>
       </div>
     </article>
   `;
