@@ -1,6 +1,6 @@
 import styles from './style.css';
 
-const popularMovies = {
+window.popularMovies = {
   results: [
     {
       adult: false,
@@ -176,7 +176,8 @@ const popularMovies = {
 };
 
 window.currentState = {
-  searchValue: null,
+  searchValue: '',
+  searchResult: [],
   selectedMovie: null,
 };
 
@@ -199,16 +200,31 @@ function renderApp() {
 renderApp();
 
 function PopularMovie() {
-  const movie = popularMovies.results[0];
+  const { backdrop_path, original_title, overview } = popularMovies.results[0];
   return `
     <article class="${styles['popular-movie']}">
-      <img class="${styles['popular-movie-img']}" src="http://image.tmdb.org/t/p/w1280/${movie.backdrop_path}">
+      <img class="${styles['popular-movie-img']}" src="http://image.tmdb.org/t/p/w1280/${backdrop_path}">
       <div class="${styles['popular-movie-description']}">
-        <h2>${movie.original_title}</h2>
-        <p>${movie.overview}</p>
+        <h2>${original_title}</h2>
+        <p>${overview}</p>
       </div>
     </article>
   `;
+}
+window.performSearch = performSearch;
+
+function performSearch(value) {
+  window.currentState.searchValue = value;
+  if (window.currentState.searchValue) {
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=844dba0bfd8f3a4f3799f6130ef9e335&language=en-US&query=${window.currentState.searchValue}`,
+    )
+      .then(response => response.json())
+      .then(data => {
+        window.currentState.searchResult = data.results;
+      })
+      .finally(window.renderApp);
+  }
 }
 
 function SearchByMovie() {
@@ -217,20 +233,15 @@ function SearchByMovie() {
       class="${styles['search-input']}"
       type="search"
       value="${window.currentState.searchValue || ''}"
-      oninput="window.currentState.searchValue = this.value; if (!this.value) renderApp()"
-      onchange="renderApp()">
+      onchange="window.performSearch(this.value);">
   `;
 }
 
 function MoviesGrid() {
-  const { searchValue } = window.currentState;
-  let title;
+  let title = 'Popular Movies';
   let movies;
-  if (searchValue) {
-    const filteredMovies = popularMovies.results.filter(movie => {
-      return movie.original_title.toLowerCase().includes(searchValue.toLowerCase());
-    });
-    movies = getMoviesCards(filteredMovies);
+  if (window.currentState.searchValue) {
+    movies = getMoviesCards(window.currentState.searchResult);
     title = 'Search Result';
   } else {
     movies = getMoviesCards(popularMovies.results);
@@ -248,14 +259,8 @@ function getMoviesCards(moviesArray) {
   let moviesItems = '';
   moviesArray.forEach(({ original_title, poster_path }) => {
     const moviesItem = `
-      <a
-        class="${styles['movies-item']}"
-        href="#"
-        title="${original_title}">
-          <img
-            src="http://image.tmdb.org/t/p/w500/${poster_path}"
-            alt="${original_title}"
-          >
+      <a class="${styles['movies-item']}" href="#" title="${original_title}">
+        <img src="http://image.tmdb.org/t/p/w500/${poster_path}" alt="${original_title}">
       </a>
     `;
     moviesItems += moviesItem;
