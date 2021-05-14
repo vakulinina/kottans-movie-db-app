@@ -46,7 +46,7 @@ function performSearch(value) {
   const { searchValue } = window.currentState;
   if (searchValue) {
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=844dba0bfd8f3a4f3799f6130ef9e335&language=en-US&query=${searchValue}`,
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&query=${searchValue}`,
     )
       .then(response => response.json())
       .then(data => {
@@ -70,7 +70,7 @@ function SearchByMovie() {
 
 function loadPopularMovies() {
   fetch(
-    'https://api.themoviedb.org/3/movie/popular?api_key=f99ccaaae4700adb92a679a409185d00&language=en-US',
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US`,
   )
     .then(response => response.json())
     .then(data => {
