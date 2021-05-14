@@ -87,6 +87,7 @@ a:hover {
 .movies-item {
   position: relative;
   padding-top: 148%;
+  background-color: rgb(54, 54, 54);
   overflow: hidden;
 }
 
