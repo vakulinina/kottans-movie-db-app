@@ -1,6 +1,6 @@
 import styles from './style.css';
 
-const popularMovies = {
+window.popularMovies = {
   results: [
     {
       adult: false,
@@ -199,13 +199,13 @@ function renderApp() {
 renderApp();
 
 function PopularMovie() {
-  const movie = popularMovies.results[0];
+  const { backdrop_path, original_title, overview } = popularMovies.results[0];
   return `
     <article class="${styles['popular-movie']}">
-      <img class="${styles['popular-movie-img']}" src="http://image.tmdb.org/t/p/w1280/${movie.backdrop_path}">
+      <img class="${styles['popular-movie-img']}" src="http://image.tmdb.org/t/p/w1280/${backdrop_path}">
       <div class="${styles['popular-movie-description']}">
-        <h2>${movie.original_title}</h2>
-        <p>${movie.overview}</p>
+        <h2>${original_title}</h2>
+        <p>${overview}</p>
       </div>
     </article>
   `;
@@ -223,8 +223,8 @@ function SearchByMovie() {
 }
 
 function MoviesGrid() {
+  let title = 'Popular Movies';
   const { searchValue } = window.currentState;
-  let title;
   let movies;
   if (searchValue) {
     const filteredMovies = popularMovies.results.filter(movie => {
@@ -248,14 +248,8 @@ function getMoviesCards(moviesArray) {
   let moviesItems = '';
   moviesArray.forEach(({ original_title, poster_path }) => {
     const moviesItem = `
-      <a
-        class="${styles['movies-item']}"
-        href="#"
-        title="${original_title}">
-          <img
-            src="http://image.tmdb.org/t/p/w500/${poster_path}"
-            alt="${original_title}"
-          >
+      <a class="${styles['movies-item']}" href="#" title="${original_title}">
+        <img src="http://image.tmdb.org/t/p/w500/${poster_path}" alt="${original_title}">
       </a>
     `;
     moviesItems += moviesItem;
