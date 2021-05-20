@@ -7,6 +7,7 @@ window.currentState = {
   selectedMovie: null,
 };
 
+window.initApp = initApp;
 window.renderApp = renderApp;
 window.performSearch = performSearch;
 window.loadPopularMovies = loadPopularMovies;
@@ -25,8 +26,9 @@ function renderApp() {
   document.querySelector('#app-root').innerHTML = `${App()}`;
 }
 
-window.loadPopularMovies();
-// window.renderApp();
+function initApp() {
+  window.loadPopularMovies().finally(renderApp);
+}
 
 function PopularMovie() {
   const { backdrop_path, original_title, overview } = window.currentState.popularMovies[0];
@@ -69,14 +71,13 @@ function SearchByMovie() {
 }
 
 function loadPopularMovies() {
-  fetch(
+  return fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US`,
   )
     .then(response => response.json())
     .then(data => {
       window.currentState.popularMovies = data.results;
-    })
-    .finally(window.renderApp);
+    });
 }
 
 function MoviesGrid() {
@@ -110,3 +111,5 @@ function getMoviesCards(movies) {
   });
   return moviesItems;
 }
+
+window.initApp();
