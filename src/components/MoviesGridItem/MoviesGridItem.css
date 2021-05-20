@@ -1,0 +1,18 @@
+.movies-item {
+  position: relative;
+  padding-top: 148%;
+  background-color: rgb(54, 54, 54);
+  overflow: hidden;
+}
+
+.movies-item-img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.movies-item:hover {
+  box-shadow: 5px 5px 7px #a8a8a8;
+  transform: translate(-5px, -5px);
+  transition: all 0.3s ease;
+}

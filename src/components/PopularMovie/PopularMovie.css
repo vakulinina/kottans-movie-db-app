@@ -1,0 +1,39 @@
+h2 {
+  margin-bottom: 35px;
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.17em;
+  text-shadow: 2px 2px 4px #333333;
+}
+
+p {
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.17em;
+  text-shadow: 2px 2px 3px #333333;
+}
+
+.popular-movie {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+  padding-top: 55%;
+  overflow: hidden;
+}
+
+.popular-movie-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.popular-movie-description {
+  position: absolute;
+  bottom: 40px;
+  left: 5%;
+  max-width: 920px;
+  width: 90%;
+}

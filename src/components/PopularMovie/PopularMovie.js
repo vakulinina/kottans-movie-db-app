@@ -1,4 +1,4 @@
-import styles from '../style.css';
+import styles from './PopularMovie.css';
 
 export default function PopularMovie() {
   const { backdrop_path, original_title, overview } = window.currentState.popularMovies[0];

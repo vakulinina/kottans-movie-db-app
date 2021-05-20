@@ -1,6 +1,6 @@
-import PopularMovie from './PopularMovie';
-import SearchByMovie from './searchByMovie';
-import MoviesGrid from './MoviesGrid';
+import PopularMovie from './PopularMovie/PopularMovie';
+import SearchByMovie from './SearchByMovie/SearchByMovie';
+import MoviesGrid from './MoviesGrid/MoviesGrid';
 
 export default function App() {
   return `

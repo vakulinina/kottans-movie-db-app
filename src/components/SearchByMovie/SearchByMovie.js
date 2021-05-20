@@ -1,4 +1,4 @@
-import styles from '../style.css';
+import styles from './SearchByMovie.css';
 
 export default function SearchByMovie() {
   return `

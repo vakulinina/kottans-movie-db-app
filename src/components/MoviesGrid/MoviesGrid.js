@@ -1,5 +1,5 @@
-import styles from '../style.css';
-import MoviesGridItem from './MoviesGridItem';
+import styles from './MoviesGrid.css';
+import MoviesGridItem from '../MoviesGridItem/MoviesGridItem';
 
 export default function MoviesGrid() {
   let title;
