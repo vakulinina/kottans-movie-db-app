@@ -1,3 +1,5 @@
+import renderApp from '../framework/render';
+
 export function performSearch(value) {
   window.currentState.searchValue = value;
   const { searchValue } = window.currentState;
@@ -9,7 +11,7 @@ export function performSearch(value) {
       .then(data => {
         window.currentState.searchResult = data.results;
       })
-      .finally(window.renderApp);
+      .finally(renderApp);
   } else {
     renderApp();
   }

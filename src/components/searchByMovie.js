@@ -1,5 +1,4 @@
 import styles from '../style.css';
-import { performSearch } from '../data/moviesData';
 
 export default function SearchByMovie() {
   return `
