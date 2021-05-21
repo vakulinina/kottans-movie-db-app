@@ -1,13 +1,16 @@
+/** @jsx createElement */
+/** @jsxFrag createFragment */
+import { createElement, createFragment } from '../framework/element';
 import PopularMovie from './PopularMovie/PopularMovie';
 import SearchByMovie from './SearchByMovie/SearchByMovie';
 import MoviesGrid from './MoviesGrid/MoviesGrid';
 
 export default function App() {
-  return `
-    <div>
-    ${PopularMovie()}
-    ${SearchByMovie()}
-    ${MoviesGrid()}
-    </div>
-  `;
+  return (
+    <>
+      <PopularMovie />
+      <SearchByMovie />
+      <MoviesGrid />
+    </>
+  );
 }
