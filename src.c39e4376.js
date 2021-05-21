@@ -7,7 +7,7 @@ module.exports={"popular-movie":"_popular-movie_82438","popular-movie-img":"_pop
 },{"../../framework/element":"PA9s","./PopularMovie.css":"rMrD"}],"q+H3":[function(require,module,exports) {
 module.exports={"search-input":"_search-input_b8246"};
 },{}],"Xo9N":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=a;var e=require("../../framework/element"),r=t(require("./SearchByMovie.css"));function t(e){return e&&e.__esModule?e:{default:e}}function a(){return(0,e.createElement)("input",{class:r.default["search-input"],type:"search",value:window.currentState.searchValue||"",onchange:e=>window.performSearch(e.target.value)})}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=a;var e=require("../../framework/element"),r=t(require("./SearchByMovie.css"));function t(e){return e&&e.__esModule?e:{default:e}}function a(){return(0,e.createElement)("input",{class:r.default["search-input"],type:"search",value:window.currentState.searchValue||"",onChange:e=>window.performSearch(e.target.value)})}
 },{"../../framework/element":"PA9s","./SearchByMovie.css":"q+H3"}],"2HrW":[function(require,module,exports) {
 module.exports={"movies-list-wrap":"_movies-list-wrap_7ed64","movies-list":"_movies-list_7ed64"};
 },{}],"x1Ri":[function(require,module,exports) {
@@ -27,4 +27,4 @@ module.exports={"movies-item":"_movies-item_ef796","movies-item-img":"_movies-it
 },{"../framework/render":"iWoG"}],"Focm":[function(require,module,exports) {
 "use strict";var e=u(require("./framework/render")),r=u(require("./data/currentState")),a=u(require("./components/App")),t=require("./data/moviesData");function u(e){return e&&e.__esModule?e:{default:e}}window.performSearch=t.performSearch,window.currentState=r.default,(0,t.loadPopularMovies)().finally(e.default);
 },{"./framework/render":"iWoG","./data/currentState":"bBDg","./components/App":"le+d","./data/moviesData":"1G90"}]},{},["Focm"], null)
-//# sourceMappingURL=src.dcb4ec54.js.map
+//# sourceMappingURL=src.c39e4376.js.map
