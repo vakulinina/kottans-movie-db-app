@@ -1,34 +1,37 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement, createFragment } from '../../framework/element';
+import { createElement, createFragment } from '../../framework';
 import styles from './MoviesGrid.css';
 import MoviesGridItem from '../MoviesGridItem/MoviesGridItem';
 
-export default function MoviesGrid() {
+export default function MoviesGrid({ searchValue, searchResult, popularMovies }) {
   let title;
   let gridItems;
-  const { searchValue, searchResult, popularMovies } = window.currentState;
+
+  if (!popularMovies) {
+    return <p>Loading...</p>;
+  }
+
   if (searchValue) {
     gridItems = (
       <>
         {searchResult.map(movie => (
-          <MoviesGridItem original_title={movie.original_title} poster_path={movie.poster_path} />
+          <MoviesGridItem originalTitle={movie.original_title} posterPath={movie.poster_path} />
         ))}
       </>
     );
-    // gridItems = searchResult.map(movie => MoviesGridItem(movie));
     title = 'Search Result';
   } else {
     gridItems = (
       <>
         {popularMovies.map(movie => (
-          <MoviesGridItem original_title={movie.original_title} poster_path={movie.poster_path} />
+          <MoviesGridItem originalTitle={movie.original_title} posterPath={movie.poster_path} />
         ))}
       </>
     );
-    // gridItems = popularMovies.map(movie => MoviesGridItem(movie));
     title = 'Popular Movies';
   }
+
   return (
     <div class={styles['movies-list-wrap']}>
       <h3>{title}</h3>

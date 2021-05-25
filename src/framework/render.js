@@ -1,11 +1,21 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 import { createElement, createFragment } from './element';
-import App from '../components/App';
+import { current } from './hooks';
 
-// let Component, Target;
+let timer;
 
-export default function renderApp() {
-  document.getElementById('app-root').innerHTML = '';
-  document.getElementById('app-root').appendChild(<App />);
+export function render(Component, target) {
+  function workLoop() {
+    if (current.shouldReRender) {
+      current.shouldReRender = false;
+      target.replaceChildren(<Component />);
+    }
+
+    cancelAnimationFrame(timer);
+    timer = requestAnimationFrame(workLoop);
+  }
+  timer = requestAnimationFrame(workLoop);
 }
+
+export default render;

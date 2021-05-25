@@ -1,10 +1,11 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement, createFragment } from '../../framework/element';
+import { createElement, createFragment } from '../../framework';
 import styles from './PopularMovie.css';
 
-export default function PopularMovie() {
-  const { backdrop_path, original_title, overview } = window.currentState.popularMovies[0];
+export default function PopularMovie({ movie }) {
+  if (!movie) return <p>Loading...</p>;
+  const { backdrop_path, original_title, overview } = movie;
   return (
     <article class={styles['popular-movie']}>
       <img

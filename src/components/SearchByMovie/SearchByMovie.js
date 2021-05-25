@@ -1,15 +1,15 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement, createFragment } from '../../framework/element';
+import { createElement, createFragment } from '../../framework';
 import styles from './SearchByMovie.css';
 
-export default function SearchByMovie() {
+export default function SearchByMovie({ value, onChange }) {
   return (
     <input
       class={styles['search-input']}
       type="search"
-      value={window.currentState.searchValue || ''}
-      onchange={event => window.performSearch(event.target.value)}
+      value={value}
+      onChange={event => onChange(event.target.value)}
     />
   );
 }
