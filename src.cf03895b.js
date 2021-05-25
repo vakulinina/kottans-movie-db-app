@@ -31,4 +31,4 @@ module.exports={no_image_backdrop:require("./no_image_backdrop.jpg")};
 },{"../framework":"SDFd","./PopularMovie/PopularMovie":"ZzMS","./SearchByMovie/SearchByMovie":"Xo9N","./MoviesGrid/MoviesGrid":"Rirn"}],"Focm":[function(require,module,exports) {
 "use strict";var e=require("./framework"),r=t(require("./components/App"));function t(e){return e&&e.__esModule?e:{default:e}}(0,e.render)(r.default,document.getElementById("app-root"));
 },{"./framework":"SDFd","./components/App":"le+d"}]},{},["Focm"], null)
-//# sourceMappingURL=src.a746d77c.js.map
+//# sourceMappingURL=src.cf03895b.js.map
