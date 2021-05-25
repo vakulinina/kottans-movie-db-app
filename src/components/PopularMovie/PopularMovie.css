@@ -19,7 +19,7 @@ p {
   display: flex;
   width: 100%;
   margin-bottom: 50px;
-  padding-top: 55%;
+  padding-top: 48%;
   overflow: hidden;
 }
 
@@ -31,9 +31,13 @@ p {
 }
 
 .popular-movie-description {
+  box-sizing: border-box;
   position: absolute;
-  bottom: 40px;
-  left: 5%;
-  max-width: 920px;
-  width: 90%;
+  bottom: 0;
+  padding-bottom: 40px;
+  padding-left: 5%;
+  padding-right: 5%;
+  left: 0;
+  width: 100%;
+  /* background: linear-gradient(359deg, black, transparent); */
 }
