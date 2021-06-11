@@ -14,7 +14,12 @@ export default function MoviesGrid({ searchValue, searchResult, popularMovies })
     gridItems = (
       <>
         {searchResult.map(({ id, original_title, poster_path }) => (
-          <MoviesGridItem key={id} originalTitle={original_title} posterPath={poster_path} />
+          <MoviesGridItem
+            key={id}
+            originalTitle={original_title}
+            posterPath={poster_path}
+            id={id}
+          />
         ))}
       </>
     );
@@ -23,7 +28,12 @@ export default function MoviesGrid({ searchValue, searchResult, popularMovies })
     gridItems = (
       <>
         {popularMovies.map(({ id, original_title, poster_path }) => (
-          <MoviesGridItem key={id} originalTitle={original_title} posterPath={poster_path} />
+          <MoviesGridItem
+            key={id}
+            originalTitle={original_title}
+            posterPath={poster_path}
+            id={id}
+          />
         ))}
       </>
     );
