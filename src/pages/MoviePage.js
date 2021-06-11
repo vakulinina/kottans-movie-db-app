@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './MoviePage.css';
 
 export default function MoviePage() {
-  const path = window.location.pathname;
-  const id = path.slice(path.lastIndexOf('/') + 1);
+  const id = window.location.hash.slice(1);
 
   const [currentMovie, setCurrentMovie] = useState('');
 
