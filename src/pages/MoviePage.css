@@ -32,12 +32,13 @@
   width: 90%;
   height: 80%;
   background-color: rgba(0, 0, 0, 0.521);
+  overflow: hidden;
 }
 
 .movie-poster-container {
   position: relative;
-  padding-top: 48%;
-  width: 62%;
+  padding-left: 34%;
+  height: 100%;
   margin-right: 20px;
   overflow: hidden;
 }
@@ -46,6 +47,11 @@
   position: absolute;
   width: 100%;
   top: 0;
+  left: 0;
+}
+
+.movie-description {
+  margin-right: 20px;
 }
 
 .movie-description p {
