@@ -1,15 +1,13 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement, createFragment } from '../../framework';
+import React from 'react';
 import styles from './SearchByMovie.css';
 
-export default function SearchByMovie({ value, onChange }) {
+export default function SearchByMovie({ value, onBlur }) {
   return (
     <input
-      class={styles['search-input']}
+      className={styles['search-input']}
       type="search"
-      value={value}
-      onChange={event => onChange(event.target.value)}
+      defaultValue={value}
+      onBlur={event => onBlur(event.target.value)}
     />
   );
 }

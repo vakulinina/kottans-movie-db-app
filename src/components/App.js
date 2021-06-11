@@ -1,6 +1,4 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement, createFragment, useState, useEffect } from '../framework';
+import React, { useState, useEffect } from 'react';
 import PopularMovie from './PopularMovie/PopularMovie';
 import SearchByMovie from './SearchByMovie/SearchByMovie';
 import MoviesGrid from './MoviesGrid/MoviesGrid';
@@ -35,7 +33,7 @@ export default function App() {
   return (
     <>
       <PopularMovie movie={popularMovies ? popularMovies[0] : null} />
-      <SearchByMovie value={searchValue} onChange={setSearchValue} />
+      <SearchByMovie value={searchValue} onBlur={setSearchValue} />
       <MoviesGrid
         searchValue={searchValue}
         searchResult={searchResult}
