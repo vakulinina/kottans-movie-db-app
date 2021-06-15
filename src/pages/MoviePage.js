@@ -19,7 +19,7 @@ export default function MoviePage() {
   return (
     <>
       <div className={styles['movie-details-container']}>
-        <img
+        <img // TODO add alt
           className={styles['movie-details-background']}
           src={`http://image.tmdb.org/t/p/w1280/${currentMovie.backdrop_path}`}
         />

@@ -6,7 +6,7 @@ export default function PopularMovie({ movie }) {
   const { backdrop_path, original_title, overview } = movie;
   return (
     <article className={styles['popular-movie']}>
-      <img
+      <img // TODO add alt
         className={styles['popular-movie-img']}
         src={`http://image.tmdb.org/t/p/w1280/${backdrop_path}`}
       />
