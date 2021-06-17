@@ -7,7 +7,7 @@ export default function SearchByMovie({ value, changeHandler }) {
       className={styles['search-input']}
       type="search"
       defaultValue={value}
-      onBlur={event => changeHandler(event.target.value)}
+      onChange={event => changeHandler(event.target.value)}
     />
   );
 }

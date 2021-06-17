@@ -9,6 +9,7 @@ export default function PopularMovie({ movie }) {
       <img
         className={styles['popular-movie-img']}
         src={`http://image.tmdb.org/t/p/w1280/${backdrop_path}`}
+        alt={`${original_title} poster`}
       />
       <div className={styles['popular-movie-description']}>
         <h2>{original_title}</h2>

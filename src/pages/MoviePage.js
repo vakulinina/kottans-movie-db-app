@@ -22,6 +22,7 @@ export default function MoviePage() {
         <img
           className={styles['movie-details-background']}
           src={`http://image.tmdb.org/t/p/w1280/${currentMovie.backdrop_path}`}
+          alt={`${currentMovie.original_title} poster`}
         />
         <article className={styles['movie-details']}>
           <div className={styles['movie-poster-container']}>
